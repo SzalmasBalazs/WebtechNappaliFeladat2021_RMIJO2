@@ -1,0 +1,9 @@
+body{
+    background-color: #dfd1ff;
+}
+
+label.formlabel{
+    text-align: center;
+    font-size: 20px;
+    font-style: solid;
+}
