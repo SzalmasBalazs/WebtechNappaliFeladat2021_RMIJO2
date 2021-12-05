@@ -8,7 +8,8 @@
 
 <body>
     <p>Please add you details!</p>
-    <form name="form1" style="text-align: left;">
+    <button class="button button1" onclick="appearForm()">Begin</button>
+    <form name="form1" style="text-align: left; display: none;" id="form">
         <table style=" border: 2px solid white; border-radius: 10px; background-color: rgb(187, 203, 255);">
             <tr>
                 <td>
@@ -59,7 +60,7 @@
                 </td>
             </tr>
         </table>
-        <button onclick="emailValidation(document.form1.email)">Submit</button>
+        <button class="buttonConfirm button2" onclick="emailValidation(document.form1.email)" style="color: black;">Submit</button>
     </form>
 </body>
 
