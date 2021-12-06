@@ -54,3 +54,31 @@ border: 2px solid green;
     color:white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+th{
+    border: 2px solid black;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(187, 203, 255);
+}
+tr{
+    background-color: rgb(187, 203, 255);
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+    margin: 4px;
+}
+tr:nth-child(even){
+    background-color: rgb(152, 176, 255);
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+    margin: 4px;
+}
+tr:hover{
+    background-color: rgb(180, 200, 250);
+}
+td{
+    border: 2px solid black;
+    padding: 8px;
+}

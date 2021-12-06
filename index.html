@@ -5,63 +5,74 @@
     <link rel="stylesheet" href="styles.css">
     <script src="projectscripts.js"></script>
 </head>
-
 <body>
     <p>Please add you details!</p>
-    <button class="button button1" onclick="appearForm()">Begin</button>
-    <form name="form1" style="text-align: left; display: none;" id="form">
-        <table style=" border: 2px solid white; border-radius: 10px; background-color: rgb(187, 203, 255);">
-            <tr>
-                <td>
-                    <label class="formlabel" for="fname">First Name:</label><br>
-                    <input type="text" placeholder="First Name" id="fname" name="fname" required><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="formlabel" for="lname">Last Name:</label><br>
-                    <input type="text" placeholder="Last Name" id="lname" name="lname" required><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="formlabel" for="bdate">Date of Birth:</label><br>
-                    <input type="date" placeholder="Date of Birth" name="bdate" id="bdate" required min="1900-01-01" max="2021-11-25">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="formlabel" for="email">E-Mail adress:</label><br>
-                    <input type="email" placeholder="E-Mail" id="email" name="email" required><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="formlabel" for="pnum">Phone Number:</label><br>
-                    <input type="tel" placeholder="Phone Number" id="pnum" name="pnum" required><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="formlabel" for="postal">Postal Code:</label><br>
-                    <input type="number" placeholder="Postal Code:" name="postal" id="postal" required><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="formlabel" for="adress">Adress:</label><br>
-                    <input type="text" placeholder="Adress" name="adress" id="adress" required><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="formlabel" for="floor">Floor/Door:</label><br>
-                    <input type="text" placeholder="Floor" name="adress" id="adress" required><br>
-                </td>
-            </tr>
-        </table>
-        <button class="buttonConfirm button2" onclick="emailValidation(document.form1.email)" style="color: black;">Submit</button>
-    </form>
+    <button id="startButton" class="button button1" onclick="appearForm()" style="display: block;">Begin</button>
+        <form name="form1" style="text-align: left; display: none; text-align: center;" id="form" onsubmit="return false">
+    
+            <table id="1" style=" border: 2px solid black; border-radius: 10px; background-color: rgb(187, 203, 255);">
+                <tr>
+                    <td>
+                        <label class="formlabel" for="fname">First Name:</label><br>
+                        <input type="text" placeholder="First Name" id="fname" name="fname" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="formlabel" for="lname">Last Name:</label><br>
+                        <input type="text" placeholder="Last Name" id="lname" name="lname" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="formlabel" for="bdate">Date of Birth:</label><br>
+                        <input type="date" placeholder="Date of Birth" name="bdate" id="bdate" required min="1900-01-01" max="2021-12-10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="formlabel" for="email">E-Mail adress:</label><br>
+                        <input type="email" placeholder="E-Mail" id="email" name="email" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="formlabel" for="pnum">Phone Number:</label><br>
+                        <input type="tel" placeholder="Phone Number" id="pnum" name="pnum" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="formlabel" for="postal">Postal Code:</label><br>
+                        <input type="number" placeholder="Postal Code:" name="postal" id="postal" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="formlabel" for="adress">Adress:</label><br>
+                        <input type="text" placeholder="Adress" name="adress" id="adress" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="formlabel" for="floor">Floor/Door:</label><br>
+                        <input type="text" placeholder="Floor" name="floor_door" id="floor" required><br>
+                    </td>
+                </tr>
+            </table>
+            <button class="buttonConfirm button2" onclick="emailValidation(document.form1.email); fillTable()" style="color: black;">Submit</button>
+        </form>
+    <table id="table" style="border: 2px solid black;"> 
+        <tr>
+            <th class="th">Name</th>
+            <th class="th">Date of Birth</th>
+            <th class="th">E-mail Adress</th>
+            <th class="th">Phone number</th>
+            <th class="th">Postal Code</th>
+            <th class="th">Adress</th>
+            <th class="th">Floor/Door</th>
+        </tr>
+    </table>
 </body>
 
 </html>
