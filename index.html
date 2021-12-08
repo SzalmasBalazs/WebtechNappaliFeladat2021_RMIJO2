@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <script src="projectscripts.js"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="projectscripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("startButton").click(function(){
+        $("#form1").fadeIn();
+    });
+});
+</script>
 </head>
 <body>
-    <p>Please add you details!</p>
-    <button id="startButton" class="button button1" onclick="appearForm()" style="display: block;">Begin</button>
-        <form name="form1" style="text-align: left; display: none; text-align: center;" id="form" onsubmit="return false">
-    
+    <header style="position: relative; font-size: 36px; text-align: center;">My Website</header>
+    <div>
+        <p class="p" style="text-align: center;">Greetings, and welcome to my website for my web technologies assignment! <br> This site will present all of the points of the assignment.</p>
+    </div>
+    <p>Please add a persons details into this form. Upon submission,<br> the added details in a table wich will update with every new submission.</p>
+    <button id="startButton" class="button button1" style="display: block;">Begin</button>
+        <form name="form1" style="display: none; text-align: center;" id="form" onsubmit="validateForm()">
             <table id="1" style=" border: 2px solid black; border-radius: 10px; background-color: rgb(187, 203, 255);">
                 <tr>
                     <td>
@@ -59,20 +69,27 @@
                         <input type="text" placeholder="Floor" name="floor_door" id="floor" required><br>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value = "Submit"/>
+                    </td>
+                </tr>
             </table>
-            <button class="buttonConfirm button2" onclick="emailValidation(document.form1.email); fillTable()" style="color: black;">Submit</button>
+         
         </form>
-    <table id="table" style="border: 2px solid black;"> 
-        <tr>
-            <th class="th">Name</th>
-            <th class="th">Date of Birth</th>
-            <th class="th">E-mail Adress</th>
-            <th class="th">Phone number</th>
-            <th class="th">Postal Code</th>
-            <th class="th">Adress</th>
-            <th class="th">Floor/Door</th>
-        </tr>
-    </table>
+        <table id="table" style="border: 2px solid black; display: none;"> 
+            <tr>
+                <th class="th">First Name</th>
+                <th class="th">Last Name</th>
+                <th class="th">Date of Birth</th>
+                <th class="th">E-mail Adress</th>
+                <th class="th">Phone number</th>
+                <th class="th">Postal Code</th>
+                <th class="th">Adress</th>
+                <th class="th">Floor/Door</th>
+            </tr>
+        </table>
+    
 </body>
 
 </html>
