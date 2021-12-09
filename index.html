@@ -1,84 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="styles.css">
-<script src="projectscripts.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function(){
-    $("startButton").click(function(){
-        $("#form1").fadeIn();
-    });
-});
-</script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="projectscripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#startButton").click(function () {
+                $("#form").fadeIn();
+            });
+        });
+       $(document).ready(function(){
+           $("#thead").click(function(){
+                $("#div1").slideToggle();
+           });
+       });
+       $(document).ready(function(){
+           $("#turtleimg").click(function(){
+                $("#turtleimg").animate({
+                    left: '200px',
+                    height: '368px',
+                    width: '558px'
+                })
+           });
+       });
+    </script>
 </head>
+
 <body>
     <header style="position: relative; font-size: 36px; text-align: center;">My Website</header>
     <div>
-        <p class="p" style="text-align: center;">Greetings, and welcome to my website for my web technologies assignment! <br> This site will present all of the points of the assignment.</p>
+        <p class="p" style="text-align: center;">Greetings, and welcome to my website for my web technologies
+            assignment! <br> This site will present all of the points of the assignment.</p>
     </div>
-    <p>Please add a persons details into this form. Upon submission,<br> the added details in a table wich will update with every new submission.</p>
+    <div><p>A few items in my household: </p>
+        <ul id="ul">
+            <li>Rugs</li>
+            <li>Tables</li>
+            <li>Computer</li>
+            <li>Television</li>
+            <li>Sofa</li>
+        </ul>
+        <p>Add something new to the list bellow:</p>
+        <input type="text" class="list" placeholder="item" id="newItem"><br>
+        <button onclick="addNewItemToList()" class="buttonConfirm button2">Add</button>
+    </div>
+    <div>
+        <p style="text-align: left;">A few links of interest:</p>
+        <a href="https://www.uni-miskolc.hu/">Miskolci Egyetem website</a><br>
+        <a href="https://github.com/SzalmasBalazs">My personal GitHub page</a>
+    </div>
+    <div>
+        <p style="text-align: left;">An image of my favorite animal:</p>
+        <img id="turtleimg" class="img" src="Sternotherus_odoratus.jpg" alt="közönséges pézsmateknős" width="279px" height="184px">
+    </div>
+    <div>
+        <p>These set of buttons change CSS properties of a few elements.</p>
+        <button onclick="document.getElementById('1').style.backgroundColor='crimson'">Change color of the border ofthe form to red!</button>
+        <button id="button3" onclick="document.getElementById('button3').style.backgroundColor='blue'; document.getElementById('button3').style.color='white'">
+            Change the color of this button to blue!</button>
+    </div>
+    <p>Please add a persons details into this form. Upon submission,<br> the added details in a table wich will update
+        with every new submission.</p>
     <button id="startButton" class="button button1" style="display: block;">Begin</button>
-        <form name="form1" style="display: none; text-align: center;" id="form" onsubmit="validateForm()">
-            <table id="1" style=" border: 2px solid black; border-radius: 10px; background-color: rgb(187, 203, 255);">
-                <tr>
-                    <td>
-                        <label class="formlabel" for="fname">First Name:</label><br>
-                        <input type="text" placeholder="First Name" id="fname" name="fname" required><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="formlabel" for="lname">Last Name:</label><br>
-                        <input type="text" placeholder="Last Name" id="lname" name="lname" required><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="formlabel" for="bdate">Date of Birth:</label><br>
-                        <input type="date" placeholder="Date of Birth" name="bdate" id="bdate" required min="1900-01-01" max="2021-12-10">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="formlabel" for="email">E-Mail adress:</label><br>
-                        <input type="email" placeholder="E-Mail" id="email" name="email" required><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="formlabel" for="pnum">Phone Number:</label><br>
-                        <input type="tel" placeholder="Phone Number" id="pnum" name="pnum" required><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="formlabel" for="postal">Postal Code:</label><br>
-                        <input type="number" placeholder="Postal Code:" name="postal" id="postal" required><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="formlabel" for="adress">Adress:</label><br>
-                        <input type="text" placeholder="Adress" name="adress" id="adress" required><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="formlabel" for="floor">Floor/Door:</label><br>
-                        <input type="text" placeholder="Floor" name="floor_door" id="floor" required><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value = "Submit"/>
-                    </td>
-                </tr>
-            </table>
-         
-        </form>
-        <table id="table" style="border: 2px solid black; display: none;"> 
+    <form name="form1" style="display: none; text-align: center;" id="form" onsubmit="validateForm(); return false">
+        <table id="1" class="tableStyle">
             <tr>
+                <td>
+                    <label class="formlabel" for="fname">First Name:</label><br>
+                    <input type="text" placeholder="First Name" id="fname" name="fname" required><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="formlabel" for="lname">Last Name:</label><br>
+                    <input type="text" placeholder="Last Name" id="lname" name="lname" required><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="formlabel" for="bdate">Date of Birth:</label><br>
+                    <input type="date" placeholder="Date of Birth" name="bdate" id="bdate" required min="1900-01-01"
+                        max="2021-12-10">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="formlabel" for="email">E-Mail adress:</label><br>
+                    <input type="email" placeholder="E-Mail" id="email" name="email" required><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="formlabel" for="pnum">Phone Number:</label><br>
+                    <input type="tel" placeholder="Phone Number" id="pnum" name="pnum" required ><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="formlabel" for="postal">Postal Code:</label><br>
+                    <input type="number" placeholder="Postal Code:" name="postal" id="postal" required maxlength="4"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="formlabel" for="adress">Adress:</label><br>
+                    <input type="text" placeholder="Adress" name="adress" id="adress" required><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="formlabel" for="floor">Floor/Door:</label><br>
+                    <input type="text" placeholder="Floor" name="floor_door" id="floor" required><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+
+    <table id="thead" style="display: none;">
+        <thead><tr><td colspan="8">click this to expand or collapse the table!</td></tr></thead>
+    </table>
+    <div id="div1">
+        <table id="table" class="tableStyle" style="width: fit-content; display: none;">
                 <th class="th">First Name</th>
                 <th class="th">Last Name</th>
                 <th class="th">Date of Birth</th>
@@ -87,9 +136,7 @@
                 <th class="th">Postal Code</th>
                 <th class="th">Adress</th>
                 <th class="th">Floor/Door</th>
-            </tr>
         </table>
-    
-</body>
-
+    </div>
+    </body>
 </html>
